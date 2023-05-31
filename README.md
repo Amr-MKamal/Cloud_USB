@@ -13,6 +13,7 @@ Required Software :
 
 ## Steps
 ### 1.Download the image.zip folder & extract it .
+from here : https://github.com/adamoutler/Pi-Zero-W-Smart-USB-Flash-Drive/releases/tag/v2.4.4
 ### 2.Use RPI imager to burn the image to SD card with your required username , password & wifi configruations.
 
 ### 3.connect the sd card to the rpi & connect the rpi to any usb port for configuration or just power it.
