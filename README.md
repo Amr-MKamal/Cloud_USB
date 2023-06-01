@@ -10,38 +10,3 @@ Required Software :
 
     Raspberry Pi Imager
     rclone for raspberry pi
-
-## Steps
-### 1.Download the image.zip folder & extract it .
-from here : https://github.com/adamoutler/Pi-Zero-W-Smart-USB-Flash-Drive/releases/tag/v2.4.4
-### 2.Use RPI imager to burn the image to SD card with your required username , password & wifi configruations.
-
-### 3.connect the sd card to the rpi & connect the rpi to any usb port for configuration or just power it.
-
-### 4.using any terminal with SSH , connect & redirect rpi output like this.
-
-: ssh -L localhost:53682:localhost:53682 pi(username)@cloudusb(hostname)
-### 5.setup & configure rclone like this :
-curl https://rclone.org/install.sh | sudo bash
-rclone config 
-
-### 6. make a new gdrive with rclone.
-1-create new remote with n.
-
-2-look for google drive.
-
-3-skip entering credentials.
-
-4-choose scope 1.
-
-5-skip(press enter) until reaching if you're working on remote or headless remote & choose no.
-
-6-You will now see, “Please go to the following link” followed by a long URL open this like from the same computer where you're sshing with pi.
-
-7-save the new remote & exit.
-
-follow the steps from here if you get lost ! : https://www.thedigitalpictureframe.com/how-to-synchronize-your-raspberry-pi-digital-picture-frame-with-google-drive-using-rclone/
-
-### 7. using a crontab programe rclone to sync with the configured drive every 2 mintues, make sure you have a folder named " usb_share" in your google drive main folder 
-crontab -e
-*/2 * * * * rclone sync ./usb_share/upload gdrive:/usb_share
